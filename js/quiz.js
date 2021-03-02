@@ -1,53 +1,28 @@
 var questions = [
     {
-        title: " ",
-        choices: [" ", " ", " ", " "],
-        answer: " "
+        title: "When a user views a page containing a JavaScript program, which machine actually executes the script? ",
+        choices: ["The User's machine running a Web browser ", "The Web server ", "A central machine deep within Netscape's corporate offices ", "None of the above "],
+        answer: "The User's machine running a Web browser "
     },
     {
-        title: " ",
-        choices: [" ", " ", " ", " "],
-        answer: " "
+        title: "______ JavaScript is also called client-side JavaScript.",
+        choices: ["Navigator", "microsoft", "Apple", "BCS"],
+        answer: "Navigator"
     },
     {
-        title: " ",
-        choices: [" ", " ", " ", " "],
-        answer: " "
+        title: "Which types of image maps can be used with JavaScript? ",
+        choices: ["Server-side image maps", "Client-side image maps", "Browser image maps", "None of the above"],
+        answer: "Client-side image maps"
     },
     {
-        title: " ",
-        choices: [" ", " ", " ", " "],
-        answer: " "
+        title: "Which of the following navigator object properties is the same in both   Netscape and IE?",
+        choices: ["navigator.appCodeName", "navigator.appName", "navigator.appVersion", "None of the above"],
+        answer: "navigator.appCodeName"
     },
     {
-        title: " ",
-        choices: [" ", " ", " ", " "],
-        answer: " "
-    },
-    {
-        title: " ",
-        choices: [" ", " ", " ", " "],
-        answer: " "
-    },
-    {
-        title: " ",
-        choices: [" ", " ", " ", " "],
-        answer: " "
-    },
-    {
-        title: " ",
-        choices: [" ", " ", " ", " "],
-        answer: " "
-    },
-    {
-        title: " ",
-        choices: [" ", " ", " ", " "],
-        answer: " "
-    },
-    {
-        title: " ",
-        choices: [" ", " ", " ", " "],
-        answer: " "
+        title: "JavaScript entities start with _______ and end with _________.",
+        choices: ["Semicolon, colon", "Semicolon, Ampersand", "Ampersand, semicolon", "Ampersand, colon"],
+        answer: "Ampersand, semicolon"
     },
 ]
 var score = 0;
@@ -84,7 +59,7 @@ function list(questionInd){
         var studentchoices = questions[questionInd].choices;
         questiondiv.textContent = studentquestion;
     }
-    studentchoices.forEach(function(newlist){
+    studentchoices.forEach(function(listitem){
         var listitem = document.createElement("li");
         listitem.textContent = newlist;
         questiondiv.appendChild(ulcreate);
@@ -110,8 +85,9 @@ function compare(event){
         done();
         gendiv.textContent = "Quiz Completed" + " " + score + "|" + questions.length + " ";
     }else{
-        list(questionInd)
+        list(questionInd);
     }
+    questiondiv.appendChild(gendiv);
 }
 function done(){
     questiondiv.innerHTML = "";
@@ -148,9 +124,23 @@ function done(){
     createsubmit.addEventListener("click", function (){
         var initials = createkey.Value;
         if(initials ===null){
-
+            console.log("EMPTY!?");
         }else{
-
+            var finalscore={
+                initials: initials,
+                score: timeleft
+            }
+        console.log(finalscore);
+        var pastscores = localStorage.getItem("pastscore");
+        if(pastscores === null){
+            pastscores = [];
+        }else{
+            pastscores = JSON.parse(pastscores);
+        }
+        pastscores.push(finalscore);
+        var newscore = JSON.stringify(pastscores);
+        localStorage.setItem("pastscores", newscore);
+        window.location.replace("./topscores.html");
         }
     });
 }

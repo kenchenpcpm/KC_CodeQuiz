@@ -16,7 +16,7 @@
 #starttime{
     float: right;
 }
-#return {
+#back {
     position: relative;
     padding: 10px;
     font-size: 18px;
@@ -35,4 +35,54 @@
     align-items: center;
     text-align: center;
     text-decoration: none;
+}
+button {
+    border-radius: 9px;
+}
+textarea {
+    width: 90%;
+    margin: 20px;
+}
+#submit {
+    background-color: chartreuse;
+    margin-left: 30%;
+    padding: 15px 30px;
+    color: white;
+}
+tag {
+    margin-right: 10px;
+}
+key {
+    margin-bottom: 20px;
+    width: 50%;
+    border: 1px solid gray;
+}
+h1{
+    text-align: center;
+}
+li {
+    margin-top: 10px;
+    padding: 5px 15px;
+    width: 82%;
+    font-size: 17px;
+    color: black;
+}
+#gendiv {
+    margin-top: 20px;
+    border-top: 1px solid gray;
+}
+
+@media screen and(max-width: 786px){
+    body{
+        max-width: 786px;
+    }
+    #wraopper{position: absolute; left: 55%;}
+    a{margin-left: 20%;}
+    #back{position: relative; right: 5%;}
+    #restart{position: relative; right: 5%;}
+}
+@media screen and (max-width: 660px){
+    body{min-width: 660px;}
+    #wrapper{position: absolute; left: 10%;}
+    a{margin-left: 12%;}
 }
