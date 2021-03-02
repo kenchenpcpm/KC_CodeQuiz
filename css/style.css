@@ -1,0 +1,38 @@
+#wrapper {
+    position: absolute;
+    left: 40%;
+    top: 25%;
+    width: 250px;
+}
+#startquiz {
+    margin-left: 35%;
+    padding: 15px 20px;
+    font-size: 18px;
+    color: black;
+}
+#questionsdiv {
+    margin: 25px;
+}
+#starttime{
+    float: right;
+}
+#return {
+    position: relative;
+    padding: 10px;
+    font-size: 18px;
+    color: black;
+    width: auto;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+#restart {
+    position: relative;
+    padding: 10px;
+    font-size: 18px;
+    color: black;
+    width: auto;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
