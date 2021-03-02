@@ -93,7 +93,25 @@ function list(questionInd){
     })
 }
 function compare(event){
-
+    var element = event.target;
+    if(element.matches("li")) {
+        var gendiv = document.createElement("div");
+        gendiv.setAttribute("id", "gendiv");
+        if(element.textContent == questions[questionInd].answer){
+            score++;
+            gendiv.textContent = "Bingo";
+        }else{
+            secondleft = secondleft - penalty;
+            gendiv.textContent = "Oops! Answer is: " + questions[questionInd].answer;
+        }
+    }
+    questionInd++;
+    if(questionInd >= questions.length) {
+        done();
+        gendiv.textContent = "Quiz Completed" + " " + score + "|" + questions.length + " ";
+    }else{
+        list(questionInd)
+    }
 }
 function done(){
 
