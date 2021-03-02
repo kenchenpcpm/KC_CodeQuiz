@@ -114,5 +114,43 @@ function compare(event){
     }
 }
 function done(){
+    questiondiv.innerHTML = "";
+    starttime.innerHTML = "";
+    var createh1 = document.createElement("h1");
+    createh1.setAttribute("id", "createh1");
+    createh1.textContent = "Done! Finally~";
+    questiondiv.appendChild(createh1);
 
+    var createp = document.createElement("p");
+    createp.setAttribute("id", "createp");
+    questiondiv.appendChild(createp);
+    if(secondleft >=0){
+        var timeleft = secondleft;
+        var createp2 = document.createElement("p");
+        clearInterval(holdinterval);
+        createp.textContent = "Score is: " + timeleft;
+        questiondiv.appendChild(createp2);
+    }
+    var createtag = document.createElement("tag");
+    createtag.setAttribute("id", "createtag");
+    createtag.textContent = " Key in initials: ";
+    questiondiv.appendChild(createtag);
+    var createkey = document.createElement("key");
+    createkey.setAttribute("type", "text");
+    createkey.setAttribute("id", "initials");
+    createkey.textContent = "";
+    questiondiv.appendChild(createkey);
+    var createsubmit = document.createElement("button");
+    createsubmit.setAttribute("type", "submit");
+    createsubmit.setAttribute("id", "submit");
+    createsubmit.textContent = "Submit";
+    questiondiv.appendChild(createsubmit);
+    createsubmit.addEventListener("click", function (){
+        var initials = createkey.Value;
+        if(initials ===null){
+
+        }else{
+
+        }
+    });
 }
